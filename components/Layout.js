@@ -24,8 +24,8 @@ const Layout = props => (
         </a>
       </div>
       <div className="navbar-menu">
-        <a className="navbar-item">Teachers</a>
-        <a className="navbar-item">Students</a>
+        <a className="navbar-item" href="/teachers">Teachers</a>
+        <a className="navbar-item" href="/students">Students</a>
       </div>
       <div className="navbar-end">
         <div className="navbar-item">

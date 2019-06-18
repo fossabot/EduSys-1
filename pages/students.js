@@ -3,12 +3,12 @@ import Head from "next/head";
 import Layout from "../components/Layout";
 import "../styles/styles.sass";
 
-class Index extends React.Component {
+class Students extends React.Component {
   render() {
     return (
       <section>
         <Head>
-          <title>Home</title>
+          <title>Students | EduSys</title>
         </Head>
         <Layout>
           <section className="hero">
@@ -16,10 +16,9 @@ class Index extends React.Component {
               <div className="columns is-mobile is-centered">
                 <div className="column is-half has-text-centered">
                   <div className="tile is-child notification is-light">
-                    <h1 className="title is-1">EduSys</h1>
+                    <h1 className="title is-1">Students</h1>
                     <p className="bd-notification">
-                      This platform provides you with a teacher and student
-                      management system for your educational institute.
+                      This page will show the students' info list
                     </p>
                   </div>
                 </div>
@@ -32,4 +31,4 @@ class Index extends React.Component {
   }
 }
 
-export default Index;
+export default Students;
