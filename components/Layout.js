@@ -27,13 +27,13 @@ const Layout = props => (
         <a className="navbar-item">Teachers</a>
         <a className="navbar-item">Students</a>
       </div>
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="buttons">
-            <a class="button is-primary" href="signup">
+      <div className="navbar-end">
+        <div className="navbar-item">
+          <div className="buttons">
+            <a className="button is-primary" href="signup">
               <strong>Sign up</strong>
             </a>
-            <a class="button is-light" href="/login">Log in</a>
+            <a className="button is-light" href="/login">Log in</a>
           </div>
         </div>
       </div>
