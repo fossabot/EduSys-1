@@ -7,13 +7,9 @@ class Form extends Component {
     super(props);
 
     this.state = {
-      newTeacher: {
-        type:"teacher",
-        name: "",
-        contact_no: "",
-        class: "",
-        section: "",
-        batch: ""
+      newUser: {
+        email: "",
+        password: ""
       }
     };
 
@@ -27,21 +23,21 @@ class Form extends Component {
     let name = e.target.name;
     this.setState(
       prevState => ({
-        newTeacher: {
-          ...prevState.newTeacher,
+        newUser: {
+          ...prevState.newUser,
           [name]: value
         }
       }),
-      () => console.log(this.state.newTeacher)
+      () => console.log(this.state.newUser)
     );
   }
 
   handleFormSubmit(e) {
     e.preventDefault();
-    let userData = this.state.newTeacher;
+    let userData = this.state.newUser;
 
     console.log(userData)
-    fetch("https://edusys-yas.herokuapp.com/api/submit", {
+    fetch("http://example.com", {
       method: "POST",
       body: JSON.stringify(userData),
       headers: {
@@ -50,20 +46,16 @@ class Form extends Component {
       }
     }).then(response => {
       response.json().then(data => {
-        console.log("Successful" + JSON.stringify(data));
+        console.log("Successful" + data);
       });
     });
   }
 
   handleClearForm(e) {
     this.setState({
-      newTeacher: {
-        type:"teacher",
-        name: "",
-        contact_no: "",
-        class: "",
-        section: "",
-        batch: ""
+      newUser: {
+        email: "",
+        password: ""
       }
     });
   }
@@ -71,42 +63,25 @@ class Form extends Component {
   render() {
     return (
       <form>
+        {/* Contact no. */}
+        <Input
+          inputType={"email"}
+          name={"email"}
+          title={"Email"}
+          value={this.state.newUser.email}
+          placeholder={"Enter your email address"}
+          handleChange={this.handleInput}
+        />{" "}
+        {/* Email */}
         <Input
           inputType={"text"}
-          title={"Full Name"}
-          name={"name"}
-          value={this.state.newTeacher.name}
-          placeholder={"Enter your name"}
+          name={"password"}
+          title={"Password"}
+          value={this.state.newUser.password}
+          placeholder={"Enter your Password"}
           handleChange={this.handleInput}
         />{" "}
-        {/* Name of the user */}
-        <Input
-          inputType={"number"}
-          name={"contact_no"}
-          title={"Contact No."}
-          value={this.state.newTeacher.contact_no}
-          placeholder={"Enter your contact no."}
-          handleChange={this.handleInput}
-        />{" "}
-        {/* Age */}
-        <Input
-          inputType={"text"}
-          name={"batch"}
-          title={"Batch"}
-          value={this.state.newTeacher.batch}
-          placeholder={"Enter your batch"}
-          handleChange={this.handleInput}
-        />{" "}
-        {/* Batch */}
-        <Input
-          inputType={"text"}
-          name={"section"}
-          title={"Section"}
-          value={this.state.newTeacher.section}
-          placeholder={"Enter your section"}
-          handleChange={this.handleInput}
-        />{" "}
-        {/* Age */}
+        {/* Password */}
         <SubmitButton
           action={this.handleFormSubmit}
           type={"primary"}

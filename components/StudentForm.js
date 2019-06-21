@@ -41,7 +41,7 @@ class Form extends Component {
     let userData = this.state.newStudent;
 
     console.log(userData)
-    fetch("http://example.com", {
+    fetch("https://edusys-yas.herokuapp.com/api/submit", {
       method: "POST",
       body: JSON.stringify(userData),
       headers: {
@@ -50,7 +50,7 @@ class Form extends Component {
       }
     }).then(response => {
       response.json().then(data => {
-        console.log("Successful" + data);
+        console.log("Successful" + JSON.stringify(data));
       });
     });
   }
