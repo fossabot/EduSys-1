@@ -27,7 +27,10 @@ class MyDocument extends Document {
             integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
             crossOrigin="anonymous"
           />
-
+          <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css"
+          />
           <meta property="og:locale" content="en_US" />
         </Head>
         <body className="custom_class">

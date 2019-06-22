@@ -3,7 +3,6 @@ import Head from "next/head";
 import Layout from "../components/Layout";
 import StudentForm from "../components/StudentForm";
 import TeacherForm from "../components/TeacherForm";
-import "../styles/styles.sass";
 
 class Form extends Component {
   render() {

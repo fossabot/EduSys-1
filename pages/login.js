@@ -1,5 +1,4 @@
 import Head from "next/head";
-import "../styles/styles.sass";
 import Layout from "../components/Layout";
 import LogInForm from "../components/LogInForm"
 
