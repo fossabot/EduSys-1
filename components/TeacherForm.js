@@ -8,7 +8,7 @@ class Form extends Component {
 
     this.state = {
       newTeacher: {
-        type:"teacher",
+        type: "teacher",
         name: "",
         contact_no: "",
         class: "",
@@ -40,7 +40,7 @@ class Form extends Component {
     e.preventDefault();
     let userData = this.state.newTeacher;
 
-    console.log(userData)
+    console.log(userData);
     fetch("https://edusys-yas.herokuapp.com/api/submit", {
       method: "POST",
       body: JSON.stringify(userData),
@@ -50,7 +50,9 @@ class Form extends Component {
       }
     }).then(response => {
       response.json().then(data => {
+        console.log("====================================");
         console.log("Successful" + JSON.stringify(data));
+        console.log("====================================");
       });
     });
   }
@@ -58,7 +60,7 @@ class Form extends Component {
   handleClearForm(e) {
     this.setState({
       newTeacher: {
-        type:"teacher",
+        type: "teacher",
         name: "",
         contact_no: "",
         class: "",

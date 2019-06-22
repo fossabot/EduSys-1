@@ -1,8 +1,8 @@
 import React from "react";
 import Head from "next/head";
 import Layout from "../components/Layout";
-
-class Students extends React.Component {
+import StudentTable from "../components/StudentTable";
+export default class extends React.Component {
   render() {
     return (
       <section>
@@ -15,10 +15,11 @@ class Students extends React.Component {
               <div className="columns is-mobile is-centered">
                 <div className="column is-half has-text-centered">
                   <div className="tile is-child notification is-light">
-                    <h1 className="title is-1">Students</h1>
+                    {/* <h1 className="title is-1">Students</h1>
                     <p className="bd-notification">
                       This page will show the students' info list
-                    </p>
+                    </p> */}
+                    <StudentTable />
                   </div>
                 </div>
               </div>
@@ -29,5 +30,3 @@ class Students extends React.Component {
     );
   }
 }
-
-export default Students;

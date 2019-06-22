@@ -9,7 +9,8 @@ class Form extends Component {
     this.state = {
       newUser: {
         email: "",
-        password: ""
+        password: "",
+        confirm_password: ""
       }
     };
 
@@ -21,43 +22,48 @@ class Form extends Component {
   handleInput(e) {
     let value = e.target.value;
     let name = e.target.name;
-    this.setState(
-      prevState => ({
-        newUser: {
-          ...prevState.newUser,
-          [name]: value
-        }
-      }),
-      () => console.log(this.state.newUser)
-    );
+    this.setState(prevState => ({
+      newUser: {
+        ...prevState.newUser,
+        [name]: value
+      }
+    }));
   }
 
   handleFormSubmit(e) {
     e.preventDefault();
     let userData = this.state.newUser;
+    let pass = this.state.newUser.password;
+    let confPass = this.state.newUser.confirm_password;
 
-    console.log(userData);
-    fetch("http://example.com", {
-      method: "POST",
-      body: JSON.stringify(userData),
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      }
-    }).then(response => {
-      response.json().then(data => {
-        console.log("====================================");
-        console.log("Successful" + JSON.stringify(data));
-        console.log("====================================");
+    if (pass === confPass) {
+      fetch("https://edusys-yas.herokuapp.com/api/register", {
+        method: "POST",
+        body: JSON.stringify(userData),
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json"
+        }
+      }).then(response => {
+        response.json().then(data => {
+          console.log('====================================');
+          console.log("Successful" + JSON.stringify(data));
+          console.log('====================================');
+        });
       });
-    });
+    } else {
+      console.log("====================================");
+      console.log("Passwords don't match");
+      console.log("====================================");
+    }
   }
 
   handleClearForm(e) {
     this.setState({
       newUser: {
         email: "",
-        password: ""
+        password: "",
+        confirm_password: ""
       }
     });
   }
@@ -84,6 +90,15 @@ class Form extends Component {
           handleChange={this.handleInput}
         />{" "}
         {/* Password */}
+        <Input
+          inputType={"text"}
+          name={"confirm_password"}
+          title={"Confirm Password"}
+          value={this.state.newUser.confirm_password}
+          placeholder={"Enter your Confirm Password"}
+          handleChange={this.handleInput}
+        />{" "}
+        {/* Confirm Password */}
         <SubmitButton
           action={this.handleFormSubmit}
           type={"primary"}

@@ -53,6 +53,9 @@ class NavBar extends Component {
           <a className="navbar-item" href="/students">
             Students
           </a>
+          <a className="navbar-item" href="/register">
+            Registration
+          </a>
         </div>
         <div className="navbar-end">
           <div className="navbar-item">
@@ -71,4 +74,4 @@ class NavBar extends Component {
   }
 }
 
-export default NavBar
+export default NavBar;
