@@ -9,7 +9,7 @@ class Form extends Component {
     return (
       <Layout>
         <Head>
-          <title>Sign Up | EduSys</title>
+          <title>Register | EduSys</title>
         </Head>
         <section className="hero">
           <div className="hero-body">

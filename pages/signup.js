@@ -5,7 +5,7 @@ import SignUpForm from "../components/SignUpForm";
 const SignUp = props => (
   <Layout>
     <Head>
-      <title>Log In | EduSys</title>
+      <title>Sign Up | EduSys</title>
     </Head>
     <section className="hero">
       <div className="hero-body">
