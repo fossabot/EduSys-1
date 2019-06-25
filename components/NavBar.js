@@ -47,25 +47,28 @@ class NavBar extends Component {
           </a>
         </div>
         <div className="navbar-menu" id="navMenu">
-          <a className="navbar-item" href="/teachers">
-            Teachers
-          </a>
-          <a className="navbar-item" href="/students">
-            Students
-          </a>
-          <a className="navbar-item" href="/register">
-            Registration
-          </a>
-        </div>
-        <div className="navbar-end">
-          <div className="navbar-item">
-            <div className="buttons">
-              <a className="button is-primary" href="signup">
-                <strong>Sign up</strong>
-              </a>
-              <a className="button is-light" href="/login">
-                Log in
-              </a>
+          <div className="navbar-start">
+            <a className="navbar-item" href="/teachers">
+              Teachers
+            </a>
+            <a className="navbar-item" href="/students">
+              Students
+            </a>
+            <a className="navbar-item" href="/register">
+              Registration
+            </a>
+          </div>
+          
+          <div className="navbar-end">
+            <div className="navbar-item">
+              <div className="buttons">
+                <a className="button is-primary" href="signup">
+                  <strong>Sign up</strong>
+                </a>
+                <a className="button is-light" href="/login">
+                  Log in
+                </a>
+              </div>
             </div>
           </div>
         </div>
