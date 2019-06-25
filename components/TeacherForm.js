@@ -63,8 +63,6 @@ class Form extends Component {
         type: "teacher",
         name: "",
         contact_no: "",
-        class: "",
-        section: "",
         batch: ""
       }
     });
@@ -100,15 +98,6 @@ class Form extends Component {
           handleChange={this.handleInput}
         />{" "}
         {/* Batch */}
-        <Input
-          inputType={"text"}
-          name={"section"}
-          title={"Section"}
-          value={this.state.newTeacher.section}
-          placeholder={"Enter your section"}
-          handleChange={this.handleInput}
-        />{" "}
-        {/* Age */}
         <SubmitButton
           action={this.handleFormSubmit}
           type={"primary"}

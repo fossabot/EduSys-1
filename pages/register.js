@@ -16,7 +16,7 @@ class Form extends Component {
             <div className="columns is-centered">
               <div className="column is-one-third">
                 <div className="notification is-info">
-                  <h1 className="title is-4">Student</h1>
+                  <h1 className="title is-4">Students</h1>
                   <hr />
                   <StudentForm />
                 </div>
