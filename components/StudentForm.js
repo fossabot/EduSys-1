@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import cogoToast from "cogo-toast";
+
 import Input from "./form/Input";
 import SubmitButton from "./form/Button";
 
@@ -50,8 +52,15 @@ class Form extends Component {
       }
     }).then(response => {
       response.json().then(data => {
+        if (data.message === "200 ok") {
+          cogoToast.success("Registration complete!", {
+            position: "bottom-right",
+            heading: "Successful",
+            color: "#24D160"
+          });
+        }
         console.log("====================================");
-        console.log("Successful" + JSON.stringify(data));
+        console.log(JSON.stringify(data));
         console.log("====================================");
       });
     });
