@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import cogoToast from "cogo-toast";
 import Input from "./form/Input";
 import SubmitButton from "./form/Button";
 
@@ -37,7 +38,7 @@ class Form extends Component {
     let userData = this.state.newUser;
 
     console.log(userData);
-    fetch("http://example.com", {
+    fetch("https://edusys-yas.herokuapp.com/api/login", {
       method: "POST",
       body: JSON.stringify(userData),
       headers: {
@@ -46,6 +47,13 @@ class Form extends Component {
       }
     }).then(response => {
       response.json().then(data => {
+      	if (data.message === "failed") {
+          cogoToast.error("Password and username don't match!", {
+            position: "bottom-right",
+            heading: "Login Failed",
+            color: "#24D160"
+          });
+        }
         console.log("====================================");
         console.log("Successful" + JSON.stringify(data));
         console.log("====================================");
