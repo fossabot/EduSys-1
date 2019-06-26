@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import cogoToast from "cogo-toast";
+
 import Input from "./form/Input";
 import SubmitButton from "./form/Button";
 
@@ -46,12 +48,31 @@ class Form extends Component {
         }
       }).then(response => {
         response.json().then(data => {
+          if (data.message === "failed") {
+            cogoToast.error("Email already in use!", {
+              position: "bottom-right",
+              heading: "Sign-up Failed",
+              color: "#24D160"
+            });
+          }
+          else {
+            cogoToast.success("Sign-up complete!", {
+              position: "bottom-right",
+              heading: "Successful",
+              color: "#24D160"
+            });
+          }
           console.log('====================================');
           console.log("Successful" + JSON.stringify(data));
           console.log('====================================');
         });
       });
     } else {
+      cogoToast.error("Passwords don't match!", {
+        position: "bottom-right",
+        heading: "Sign-up failed!",
+        color: "#24D160"
+      });
       console.log("====================================");
       console.log("Passwords don't match");
       console.log("====================================");
