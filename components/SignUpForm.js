@@ -34,6 +34,11 @@ class Form extends Component {
 
   handleFormSubmit(e) {
     e.preventDefault();
+    cogoToast.loading("Completing action...", {
+      position: "bottom-right",
+      heading: "Please wait",
+      color: "#24D160"
+    });
     let userData = this.state.newUser;
     let pass = this.state.newUser.password;
     let confPass = this.state.newUser.confirm_password;
